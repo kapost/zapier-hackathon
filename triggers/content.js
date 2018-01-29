@@ -3,12 +3,11 @@ const sample = require("../samples/sample_content");
 const triggerContent = (z, bundle) => {
   const responsePromise = z.request({
     method: "GET",
-    url: `https://${bundle.authData.subdomain}.${bundle.authData.host}/api/v1/content/`,
+    url: `https://${bundle.authData.subdomain}.${process.env.ENV_HOST}/api/v1/content/`,
     params: {}
   });
   return responsePromise
     .then(response => {
-      // z.console.log("response", JSON.parse(response).response)
       return response.json.response
     });
 };

@@ -3,7 +3,7 @@
 const authentication = {
   type: "custom",
   test: {
-    url: "https://{{bundle.authData.subdomain}}.{{bundle.authData.host}}/api/v1/profile.json"
+    url: "https://{{bundle.authData.subdomain}}.{{process.env.ENV_HOST}}/api/v1/profile.json"
   },
   fields: [
     {

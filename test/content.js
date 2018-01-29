@@ -6,17 +6,13 @@ const zapier = require("zapier-platform-core");
 const App = require("../index");
 const appTester = zapier.createAppTester(App);
 
-//These are automated tests for the Issue create and Issue Trigger.
-//They will run every time the `zapier test` command is executed.
 describe("content trigger", () => {
-  zapier.tools.env.inject();
+  zapier.tools.env.inject(); // load env from .environment
 
-  // Make sure there"s an open issue to fetch here!
   it("should get content", (done) => {
     const bundle = {
       authData: {
         apiKey: process.env.TEST_API_KEY,
-        host: process.env.TEST_HOST,
         subdomain: process.env.TEST_SUBDOMAIN
       },
       inputData: {}
