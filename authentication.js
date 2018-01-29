@@ -13,7 +13,7 @@ const authentication = {
       helpText: "Found in your browser's address bar after logging in."
     },
     {
-      key: "api_key",
+      key: "apiKey",
       type: "string",
       required: true,
       helpText: "Found on your user settings page. Go to https://help.kapost.com/hc/en-us/articles/211800068-About-the-Kapost-API for more information."
