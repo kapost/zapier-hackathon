@@ -35,8 +35,7 @@ module.exports = {
       {key: "id", label: "ID"},
       {key: "updated_at", label: "Updated At"},
       {key: "title", label: "Title"},
-      {key: "assignee_id", label: "Assignee ID"},
-      {key: "creator_id", label: "Creator ID"}
+      {key: "media_url", label: "Media URL"}
     ]
   }
 };
