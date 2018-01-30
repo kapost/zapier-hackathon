@@ -5,7 +5,7 @@ const triggerContent = (z, bundle) => {
     method: "GET",
     url: `https://${bundle.authData.subdomain}.${process.env.ENV_HOST}/api/v1/content/`,
     params: {
-      columns: ["indexable_columns"]
+      "columns[]": "content_file"
     }
   });
   return responsePromise
