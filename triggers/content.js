@@ -4,7 +4,9 @@ const triggerContent = (z, bundle) => {
   const responsePromise = z.request({
     method: "GET",
     url: `https://${bundle.authData.subdomain}.${process.env.ENV_HOST}/api/v1/content/`,
-    params: {}
+    params: {
+      columns: ["indexable_columns"]
+    }
   });
   return responsePromise
     .then(response => {
