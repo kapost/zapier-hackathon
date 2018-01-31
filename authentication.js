@@ -17,6 +17,12 @@ const authentication = {
       type: "string",
       required: true,
       helpText: "Found on your user settings page. Go to https://help.kapost.com/hc/en-us/articles/211800068-About-the-Kapost-API for more information."
+    },
+    {
+      key: "ngrokUrl",
+      type: "string",
+      required: true,
+      helpText: "Ngrok url for local webhook dev."
     }
   ]
 };

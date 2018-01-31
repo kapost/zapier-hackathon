@@ -1,4 +1,5 @@
 const contentTrigger = require("./triggers/content");
+const publishTrigger = require("./triggers/publish");
 const { authentication, addApiKeyToHeader } = require("./authentication");
 
 const handleHTTPError = (response, z) => {
@@ -30,7 +31,8 @@ const App = {
 
   // If you want your trigger to show up, you better include it here!
   triggers: {
-    [contentTrigger.key]: contentTrigger
+    [contentTrigger.key]: contentTrigger,
+    [publishTrigger.key]: publishTrigger
   },
 
   // If you want your searches to show up, you better include it here!
