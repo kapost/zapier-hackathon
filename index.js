@@ -1,5 +1,6 @@
 const contentTrigger = require("./triggers/content");
 const publishTrigger = require("./triggers/publish");
+const createContent = require("./creates/create");
 const { authentication, addApiKeyToHeader } = require("./authentication");
 
 const handleHTTPError = (response, z) => {
@@ -41,6 +42,7 @@ const App = {
 
   // If you want your creates to show up, you better include it here!
   creates: {
+    [createContent.key]: createContent
   }
 };
 
