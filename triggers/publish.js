@@ -6,7 +6,7 @@ const subscribeHook = (z, bundle) => {
   };
 
   const options = {
-    url: bundle.authData.ngrokUrl,
+    url: `${bundle.authData.ngrokUrl}/api/webhooks/zapier`,
     method: "POST",
     body: JSON.stringify(data)
   };
