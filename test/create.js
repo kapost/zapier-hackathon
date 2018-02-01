@@ -17,6 +17,7 @@ describe.only("creates", () => {
         inputData: {
           body: "<p>test</p>",
           title: "Test",
+          content_type_id: process.env.BLOG_POST_CONTENT_TYPE_ID
         }
       };
 

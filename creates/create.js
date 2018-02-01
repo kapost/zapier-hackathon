@@ -13,13 +13,15 @@ module.exports = {
     ],
     perform: (z, bundle) => {
       const base64Encoded = Buffer.from(`${bundle.authData.apiKey}:x`).toString("base64")
-      const promise = z.request({
-        url: `https://${bundle.authData.subdomain}.${process.env.ENV_HOST}/api/v1/content`,
+      const body = JSON.stringify({
+        body: bundle.inputData.body,
+        title: bundle.inputData.title,
+        content_type_id: process.env.BLOG_POST_CONTENT_TYPE_ID
+      });
+
+      const promise = z.request(`https://${bundle.authData.subdomain}.${process.env.ENV_HOST}/api/v1/content`, {
         method: "POST",
-        params: {
-          body: bundle.inputData.body,
-          title: bundle.inputData.title,
-        },
+        body: body,
         headers: {
           "content-type": "application/json",
           "Authorization": `Basic ${base64Encoded}`
